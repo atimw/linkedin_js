@@ -52,11 +52,30 @@ const content = `
   
 `;
 
-const main = document.querySelector(".maincontent");
+const navigationContent = `
+<ul>
+  <li><a href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+`;
 
+const main = document.querySelector(".maincontent");
+const header = document.querySelector(".siteheader");
 const newArticle = document.createElement("article");
+
 newArticle.classList.add("backpack");
 newArticle.setAttribute("id", "everyday");
 newArticle.innerHTML = content;
 
+const navigation = document.createElement("nav");
+navigation.classList.add("mainNavigation");
+navigation.setAttribute("id","navigation");
+navigation.innerHTML = navigationContent;
+navigation.style.width = '100%';
+navigation.style.display = 'flex';
+navigation.style.justifyContent = 'center';
+
 main.append(newArticle);
+header.insertAdjacentElement('afterend',navigation);
